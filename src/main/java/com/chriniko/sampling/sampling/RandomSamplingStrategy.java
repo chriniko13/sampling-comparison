@@ -10,6 +10,7 @@ public class RandomSamplingStrategy implements SamplingStrategy {
     public SamplingOutput perform(Double inputTrafficThreshold) {
 
         double randomNumber = ThreadLocalRandom.current().nextDouble(0.1D, 1.1D);
+        //double randomNumber = ThreadLocalRandom.current().nextDouble(0.0D, 1.1D);
 
         BigDecimal scaledRandomNumber = BigDecimal
                 .valueOf(randomNumber)
