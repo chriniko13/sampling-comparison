@@ -14,14 +14,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/*
-https://www.youtube.com/watch?v=jTUkmvPMlUE
-https://www.youtube.com/watch?v=xddHqIcnvHw
-https://www.youtube.com/watch?v=C7xYw2nGelg
-https://www.youtube.com/watch?v=15sWtXtKTr8
-https://github.com/olivergierke/sos
- */
-
 public class KickStarter {
 
     public static void main(String[] args) {
