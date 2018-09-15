@@ -27,7 +27,15 @@ public class LogFrame extends JFrame {
 
         DefaultMutableTreeNode randomSamplingPassNode = new DefaultMutableTreeNode("RandomSampling-Pass (records: " + samplingOutputsForRandom_True.size() + ")");
         for (SamplingOutput samplingOutput : samplingOutputsForRandom_True) {
-            randomSamplingPassNode.add(new DefaultMutableTreeNode(samplingOutput.toString()));
+
+            DefaultMutableTreeNode outputNode = new DefaultMutableTreeNode(samplingOutput.toString());
+
+            outputNode.add(new DefaultMutableTreeNode(String.format("traffic threshold: %s", samplingOutput.getTrafficThresholdInput())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("random factor: %s", samplingOutput.getRandomFactor())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("inequality: %s", samplingOutput.getInequality())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("outcome: %s", samplingOutput.isSamplingOutcome())));
+
+            randomSamplingPassNode.add(outputNode);
         }
 
         List<SamplingOutput> samplingOutputsForRandom_False = Optional
@@ -36,7 +44,15 @@ public class LogFrame extends JFrame {
 
         DefaultMutableTreeNode randomSamplingNotPassNode = new DefaultMutableTreeNode("RandomSampling-NotPass (records: " + samplingOutputsForRandom_False.size() + ")");
         for (SamplingOutput samplingOutput : samplingOutputsForRandom_False) {
-            randomSamplingNotPassNode.add(new DefaultMutableTreeNode(samplingOutput.toString()));
+
+            DefaultMutableTreeNode outputNode = new DefaultMutableTreeNode(samplingOutput.toString());
+
+            outputNode.add(new DefaultMutableTreeNode(String.format("traffic threshold: %s", samplingOutput.getTrafficThresholdInput())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("random factor: %s", samplingOutput.getRandomFactor())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("inequality: %s", samplingOutput.getInequality())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("outcome: %s", samplingOutput.isSamplingOutcome())));
+
+            randomSamplingNotPassNode.add(outputNode);
         }
 
         randomSamplingNode.add(randomSamplingPassNode);
@@ -51,7 +67,15 @@ public class LogFrame extends JFrame {
 
         DefaultMutableTreeNode timeRandomSamplingPassNode = new DefaultMutableTreeNode("TimeRandomSampling-Pass (records: " + samplingOutputsForTimeRandom_True.size() + ")");
         for (SamplingOutput samplingOutput : samplingOutputsForTimeRandom_True) {
-            timeRandomSamplingPassNode.add(new DefaultMutableTreeNode(samplingOutput.toString()));
+
+            DefaultMutableTreeNode outputNode = new DefaultMutableTreeNode(samplingOutput.toString());
+
+            outputNode.add(new DefaultMutableTreeNode(String.format("traffic threshold: %s", samplingOutput.getTrafficThresholdInput())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("random factor: %s", samplingOutput.getRandomFactor())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("inequality: %s", samplingOutput.getInequality())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("outcome: %s", samplingOutput.isSamplingOutcome())));
+
+            timeRandomSamplingPassNode.add(outputNode);
         }
 
         List<SamplingOutput> samplingOutputsForTimeRandom_False = Optional
@@ -60,7 +84,15 @@ public class LogFrame extends JFrame {
 
         DefaultMutableTreeNode timeRandomSamplingNotPassNode = new DefaultMutableTreeNode("TimeRandomSampling-NotPass (records: " + samplingOutputsForTimeRandom_False.size() + ")");
         for (SamplingOutput samplingOutput : samplingOutputsForTimeRandom_False) {
-            timeRandomSamplingNotPassNode.add(new DefaultMutableTreeNode(samplingOutput.toString()));
+
+            DefaultMutableTreeNode outputNode = new DefaultMutableTreeNode(samplingOutput.toString());
+
+            outputNode.add(new DefaultMutableTreeNode(String.format("traffic threshold: %s", samplingOutput.getTrafficThresholdInput())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("random factor: %s", samplingOutput.getRandomFactor())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("inequality: %s", samplingOutput.getInequality())));
+            outputNode.add(new DefaultMutableTreeNode(String.format("outcome: %s", samplingOutput.isSamplingOutcome())));
+
+            timeRandomSamplingNotPassNode.add(outputNode);
         }
 
         timeRandomSamplingNode.add(timeRandomSamplingPassNode);
