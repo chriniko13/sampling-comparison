@@ -39,7 +39,7 @@ public class KickStarter {
 
 
         // --- animation phase ---
-        animationPhase(samplingStrategiesOutputs);
+        animationPhase(samplingStrategiesOutputs, trafficThreshold, NO_OF_SAMPLES);
 
     }
 
@@ -60,7 +60,11 @@ public class KickStarter {
     }
 
 
-    private static void animationPhase(Map<String, List<SamplingOutput>> samplingStrategiesOutputs) {
+    private static void animationPhase(Map<String, List<SamplingOutput>> samplingStrategiesOutputs,
+                                       double trafficThreshold,
+                                       int NO_OF_SAMPLES) {
+
+        final String titleAppend = String.format(" (trafficThreshold: %s, noOfSamples: %d)", String.valueOf(trafficThreshold), NO_OF_SAMPLES);
 
         // Note: pie chart for random sampling.
         List<SamplingOutput> outputsForRandomSampling = samplingStrategiesOutputs.get("random");
@@ -80,7 +84,7 @@ public class KickStarter {
 
         PieChart randomSamplingPieChart = new PieChart(
                 "Comparison of samplings - RandomSampling",
-                "Results of random sampling",
+                "Results of random sampling" + titleAppend,
                 defaultPieDatasetForRandomSampling
         );
         randomSamplingPieChart.pack();
@@ -106,7 +110,7 @@ public class KickStarter {
 
         PieChart timeRandomSamplingPieChart = new PieChart(
                 "Comparison of samplings - TimeRandomSampling",
-                "Results of time-random sampling",
+                "Results of time-random sampling" + titleAppend,
                 defaultPieDatasetForTimeRandomSampling
         );
         timeRandomSamplingPieChart.pack();
@@ -124,7 +128,7 @@ public class KickStarter {
         datasetForRandom.addSeries(randomSampling);
 
         XYLineChart xyLineChartForRandom = new XYLineChart("Comparison of samplings - RandomSampling",
-                "Results of random sampling",
+                "Results of random sampling" + titleAppend,
                 datasetForRandom);
         xyLineChartForRandom.pack();
         RefineryUtilities.positionFrameRandomly(xyLineChartForRandom);
@@ -141,7 +145,7 @@ public class KickStarter {
         datasetForTimeRandom.addSeries(timeRandomSampling);
 
         XYLineChart xyLineChartForTimeRandom = new XYLineChart("Comparison of samplings - TimeRandomSampling",
-                "Results of time random sampling",
+                "Results of time random sampling" + titleAppend,
                 datasetForTimeRandom);
         xyLineChartForTimeRandom.pack();
         RefineryUtilities.positionFrameRandomly(xyLineChartForTimeRandom);
