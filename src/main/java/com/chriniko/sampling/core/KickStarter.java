@@ -67,8 +67,8 @@ public class KickStarter {
         final String titleAppend = String.format(" (trafficThreshold: %s, noOfSamples: %d)", String.valueOf(trafficThreshold), NO_OF_SAMPLES);
 
         // Note: pie chart for random sampling.
-        List<SamplingOutput> outputsForRandomSampling = samplingStrategiesOutputs.get("random");
-        Map<Boolean, List<SamplingOutput>> outputsPartitionedByResultForRandomSampling = outputsForRandomSampling
+        final List<SamplingOutput> outputsForRandomSampling = samplingStrategiesOutputs.get("random");
+        final Map<Boolean, List<SamplingOutput>> outputsPartitionedByResultForRandomSampling = outputsForRandomSampling
                 .stream()
                 .collect(Collectors.groupingBy(SamplingOutput::isSamplingOutcome));
 
@@ -93,8 +93,8 @@ public class KickStarter {
 
 
         // Note: pie chart for time random sampling.
-        List<SamplingOutput> outputsForTimeRandomSampling = samplingStrategiesOutputs.get("time-random");
-        Map<Boolean, List<SamplingOutput>> outputsPartitionedByResultForTimeRandomSampling = outputsForTimeRandomSampling
+        final List<SamplingOutput> outputsForTimeRandomSampling = samplingStrategiesOutputs.get("time-random");
+        final Map<Boolean, List<SamplingOutput>> outputsPartitionedByResultForTimeRandomSampling = outputsForTimeRandomSampling
                 .stream()
                 .collect(Collectors.groupingBy(SamplingOutput::isSamplingOutcome));
 
