@@ -1,5 +1,6 @@
 package com.chriniko.sampling.core;
 
+import com.chriniko.sampling.visualization.LogFrame;
 import com.chriniko.sampling.visualization.PieChart;
 import com.chriniko.sampling.visualization.XYLineChart;
 import com.chriniko.sampling.sampling.SamplingOutput;
@@ -151,6 +152,13 @@ public class KickStarter {
         RefineryUtilities.positionFrameRandomly(xyLineChartForTimeRandom);
         xyLineChartForTimeRandom.setVisible(true);
 
+
+        // Note: create results log frame.
+        LogFrame logFrame = new LogFrame(outputsPartitionedByResultForRandomSampling, outputsPartitionedByResultForTimeRandomSampling);
+        logFrame.setTitle("Logs Result");
+        logFrame.pack();
+        RefineryUtilities.positionFrameRandomly(logFrame);
+        logFrame.setVisible(true);
     }
 
 }
