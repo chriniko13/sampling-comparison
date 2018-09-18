@@ -39,12 +39,12 @@ class PreparePhaseOutput {
     }
 
     PreparePhaseOutput invoke() {
-        trafficThreshold = 0.7D;
+        trafficThreshold = 0.1D;
 
         randomStrategy = new RandomSamplingStrategy();
         timeRandomStrategy = new TimeRandomSamplingStrategy();
 
-        noOfSamples = 10000;
+        noOfSamples = 1_000;
 
         samplingStrategiesOutputs = new HashMap<>();
         samplingStrategiesOutputs.put("random", new LinkedList<>());
