@@ -13,6 +13,7 @@ import org.jfree.ui.RefineryUtilities;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.stream.Collectors;
@@ -58,6 +59,12 @@ public class KickStarter {
 
             SamplingOutput samplingOutputOfTimeRandomStrategy = timeRandomStrategy.perform(trafficThreshold);
             samplingStrategiesOutputs.get("time-random").add(samplingOutputOfTimeRandomStrategy);
+
+
+            try {
+                Thread.sleep(new Random().nextInt(10));
+            } catch (InterruptedException ignored) {
+            }
 
         }
     }

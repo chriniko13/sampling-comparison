@@ -44,7 +44,7 @@ class PreparePhaseOutput {
         randomStrategy = new RandomSamplingStrategy();
         timeRandomStrategy = new TimeRandomSamplingStrategy();
 
-        noOfSamples = 1000;
+        noOfSamples = 10000;
 
         samplingStrategiesOutputs = new HashMap<>();
         samplingStrategiesOutputs.put("random", new LinkedList<>());
